@@ -204,7 +204,7 @@ var snake = {
   y: 160,
   
   // snake velocity. moves one grid length every frame in either the x or y direction
-  dx: grid * slowamount,
+  dx: grid * deltaTime * slowamount,
   dy: 0,
   
   // keep track of all grids the snake body occupies
@@ -305,8 +305,7 @@ function loop() {
         snake.y = 160;
         snake.cells = [];
         snake.maxCells = startfat;
-        snake.dx = grid * 0.15;
-        snake.dy = 0;
+        right();
 
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
@@ -375,27 +374,27 @@ document.addEventListener('keydown', function(e) {
 
  function left(){
   if(snake.dx === 0){
-    snake.dx = -grid * slowamount;
+    snake.dx = -grid * deltaTime * slowamount;
     snake.dy = 0;
   }
  }
  
  function right(){
   if(snake.dx === 0){
-    snake.dx = grid * slowamount;
+    snake.dx = grid * deltaTime * slowamount;
     snake.dy = 0;
   }
  }
  function up(){
   if(snake.dy === 0){
-    snake.dy = -grid * slowamount;
+    snake.dy = -grid * deltaTime * slowamount;
     snake.dx = 0;
   }
  }
  
  function down(){
   if(snake.dy === 0){
-    snake.dy = grid * slowamount;
+    snake.dy = grid * deltaTime * slowamount;
     snake.dx = 0;
   }
  }

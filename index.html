@@ -34,6 +34,20 @@
 </head>
 <body>
 
+
+<audio src="01-Audio Track.wav" id="c1"></audio>
+<audio src="02-Audio Track.wav" id="c2"></audio>
+<audio src="03-Audio Track.wav" id="c3"></audio>
+<audio src="04-Audio Track.wav" id="c4"></audio>
+<audio src="05-Audio Track.wav" id="c5"></audio>
+<audio src="06-Audio Track.wav" id="c6"></audio>
+<audio src="07-Audio Track.wav" id="c7"></audio>
+<audio src="08-Audio Track.wav" id="c8"></audio>
+<audio src="09-Audio Track.wav" id="c9"></audio>
+
+
+
+
 <iframe style="display:none;"  src="https://www.youtube.com/embed/xCRP_Y-VXuo?autoplay=1;&loop=1;" frameborder="0" allow="autoplay;loop;" allowfullscreen></iframe>
 
 
@@ -42,7 +56,7 @@
 const img = new Image();
 img.height = 100;
 img.width = 100;
-img.src = 'nerd.png';
+img.src = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/nerd-face_1f913.png';
 
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -58,7 +72,40 @@ var count = 0;
 var collected = 0;
 var slowamount = 0.15;
 var startfat = 40;
-  
+
+function sound(){
+  songNum = Math.floor(Math.random() * 9) + 1;
+  if(songNum == 1){
+    c1.load();
+    c1.play();
+  } else if(songNum == 2){
+    c2.load();
+    c2.play();
+  } else if(songNum == 3){
+    c3.load();
+    c3.play();
+  } else if(songNum == 4){
+    c4.load();
+    c4.play();
+  } else if(songNum == 5){
+    c5.load();
+    c5.play();
+  } else if(songNum == 6){
+    c6.load();
+    c6.play();
+  } else if(songNum == 7){
+    c7.load();
+    c7.play();
+  } else if(songNum == 8){
+    c8.load();
+    c8.play();
+  } else if(songNum == 9){
+    c9.load();
+    c9.play();
+  }
+}
+
+
 var snake = {
   x: 160,
   y: 160,
@@ -139,7 +186,7 @@ function loop() {
     // snake ate apple
     if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50) {
       snake.maxCells++;
-
+      sound();
       // canvas is 400x400 which is 25x25 grids 
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;

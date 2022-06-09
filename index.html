@@ -54,9 +54,10 @@
 <canvas width="800" height="800" id="game"></canvas>
 <script>
 const img = new Image();
-img.height = 100;
-img.width = 100;
 img.src = 'nerd.png';
+
+const grap = new Image();
+grap.src = 'grape.png';
 
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -219,10 +220,10 @@ function loop() {
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
         cou.innerHTML = "CURRENT SCORE: " + collected;
-        alert('YOU HAVE NO APPLES');
       }
     }
   context.drawImage(img, cell.x - 25, cell.y - 25, 75, 75);
+  context.drawImage(grap, apple.x, apple.y, 20, 20);
   });
 }
 

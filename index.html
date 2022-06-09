@@ -48,7 +48,7 @@
 
 
 
-<iframe style="display:none;"  src="https://www.youtube.com/embed/a-ZM7Cun59E?autoplay=1;&loop=1;" frameborder="0" allow="autoplay;loop;" allowfullscreen></iframe>
+<iframe style="display:none;"  src="https://www.youtube.com/embed/0zIiXYlQmJ4?autoplay=1;&loop=1;" frameborder="0" allow="autoplay;loop;" allowfullscreen></iframe>
 
 
 <canvas width="800" height="800" id="game"></canvas>
@@ -73,7 +73,7 @@ var count = 0;
 var collected = 0;
 var slowamount = 0.15;
 var startfat = 40;
- 
+
  
  var user = getCookie("username");
   if (user != "") {
@@ -133,6 +133,7 @@ var apple = {
   x: 320,
   y: 320
 };
+ 
 
 // get random whole numbers in a specific range
 // @see https://stackoverflow.com/a/1527820/2124254
@@ -202,12 +203,12 @@ function loop() {
       collected++;
       collected += collected;
       snake.maxCells += collected;
-      
+      cells[i].style="display:none"
       slowamount *= 1.05;
       
       cou.innerHTML = "CURRENT SCORE: " + collected;
       CalcHigh();
-
+      apple.style="display:none"
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -228,6 +229,7 @@ function loop() {
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
         cou.innerHTML = "CURRENT SCORE: " + collected;
+        cells[i].style="display:none"
       }
     }
   context.drawImage(img, cell.x - 25, cell.y - 25, 75, 75);

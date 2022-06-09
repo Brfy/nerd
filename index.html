@@ -231,6 +231,7 @@ function CalcHigh(){
   if(collected > highest){
     highest = collected;
     hcou.innerHTML = "🤓 HIGH SCORE: " + highest;
+    document.cookie = "username=" + highest;
   }
 }
 

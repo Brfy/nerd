@@ -187,11 +187,11 @@ function loop() {
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
   
   // draw snake one cell at a time
-  context.fillStyle = 'green';
+  //context.fillStyle = 'green';
   snake.cells.forEach(function(cell, index) {
     
     // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+    //context.fillRect(cell.x, cell.y, grid-1, grid-1);  
 
     // snake ate apple
     if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50) {
@@ -203,12 +203,10 @@ function loop() {
       collected++;
       collected += collected;
       snake.maxCells += collected;
-      cells[i].style="display:none"
       slowamount *= 1.05;
       
       cou.innerHTML = "CURRENT SCORE: " + collected;
       CalcHigh();
-      apple.style="display:none"
     }
 
     // check collision with all cells after this one (modified bubble sort)

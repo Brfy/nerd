@@ -134,19 +134,19 @@ var startfat = 40;
       // sliding horizontally
       if (diffX > 0) {
         // swiped left
-        alert("swipe left");
+        left();
       } else {
         // swiped right
-        alert("swipe right");
+        right();
       }  
     } else {
       // sliding vertically
       if (diffY > 0) {
         // swiped up
-        alert("swipe up");
+        up();
       } else {
         // swiped down
-        alert("swipe down");
+        down();
       }  
     }
 
@@ -357,26 +357,41 @@ document.addEventListener('keydown', function(e) {
 
   // left arrow key
   if (e.which === 37 && snake.dx === 0) {
-    snake.dx = -grid * slowamount;
-    snake.dy = 0;
+    left();
   }
   // up arrow key
   else if (e.which === 38 && snake.dy === 0) {
-    snake.dy = -grid * slowamount;
-    snake.dx = 0;
+    up();
   }
   // right arrow key
   else if (e.which === 39 && snake.dx === 0) {
-    snake.dx = grid * slowamount;
-    snake.dy = 0;
+    right();
   }
   // down arrow key
   else if (e.which === 40 && snake.dy === 0) {
-    snake.dy = grid * slowamount;
-    snake.dx = 0;
+    down();
   }
 });
 
+ function left(){
+    snake.dx = -grid * slowamount;
+    snake.dy = 0;
+ }
+ 
+ function right(){
+    snake.dx = grid * slowamount;
+    snake.dy = 0;
+ }
+ function up(){
+    snake.dy = -grid * slowamount;
+    snake.dx = 0;
+ }
+ 
+ function down(){
+    snake.dy = grid * slowamount;
+    snake.dx = 0;
+ }
+ 
 // start the game
 requestAnimationFrame(loop);
 </script>

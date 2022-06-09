@@ -356,40 +356,48 @@ document.addEventListener('keydown', function(e) {
   // shouldn't let you collide with your own body)
 
   // left arrow key
-  if (e.which === 37 && snake.dx === 0) {
+  if (e.which === 37) {
     left();
   }
   // up arrow key
-  else if (e.which === 38 && snake.dy === 0) {
+  else if (e.which === 38) {
     up();
   }
   // right arrow key
-  else if (e.which === 39 && snake.dx === 0) {
+  else if (e.which === 39) {
     right();
   }
   // down arrow key
-  else if (e.which === 40 && snake.dy === 0) {
+  else if (e.which === 40) {
     down();
   }
 });
 
  function left(){
+  if(snake.dx === 0){
     snake.dx = -grid * slowamount;
     snake.dy = 0;
+  }
  }
  
  function right(){
+  if(snake.dx === 0){
     snake.dx = grid * slowamount;
     snake.dy = 0;
+  }
  }
  function up(){
+  if(snake.dy === 0){
     snake.dy = -grid * slowamount;
     snake.dx = 0;
+  }
  }
  
  function down(){
+  if(snake.dy === 0){
     snake.dy = grid * slowamount;
     snake.dx = 0;
+  }
  }
  
 // start the game

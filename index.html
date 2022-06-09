@@ -311,7 +311,7 @@ function loop() {
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
         cou.innerHTML = "CURRENT SCORE: " + collected;
-        cells[i].style="display:none"
+        snake.maxCells = startfat;
       }
     }
   context.drawImage(img, cell.x - 25, cell.y - 25, 75, 75);

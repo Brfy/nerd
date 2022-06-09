@@ -296,6 +296,7 @@ function loop() {
     for (var i = index + 1; i < snake.cells.length; i++) {
       
       // snake occupies same space as a body part. reset game
+     //DEATH
       if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 2) {
         CalcHigh();
         slowamount = 0.15;
@@ -304,7 +305,8 @@ function loop() {
         snake.y = 160;
         snake.cells = [];
         snake.maxCells = startfat;
-        right();
+        snake.dx = grid * slowamount;
+        snake.dy = 0;
 
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;

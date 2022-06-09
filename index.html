@@ -223,15 +223,65 @@ var apple = {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+ 
+
+ 
+
+var stop = false;
+var frameCount = 0;
+var $results = $("#results");
+var fps, fpsInterval, startTime, now, then, elapsed;
+
+
+// initialize the timer variables and start the animation
+
+function startAnimating(fps) {
+    fpsInterval = 1000 / fps;
+    then = Date.now();
+    startTime = then;
+    animate();
+}
+
+
+// the animation loop calculates time elapsed since the last loop
+// and only draws if your specified fps interval is achieved
+
+function animate() {
+
+    // request another frame
+
+    requestAnimationFrame(animate);
+
+    // calc elapsed time since last loop
+
+    now = Date.now();
+    elapsed = now - then;
+
+    // if enough time has elapsed, draw the next frame
+
+    if (elapsed > fpsInterval) {
+
+        // Get ready for next frame by setting then=now, but also adjust for your
+        // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+        then = now - (elapsed % fpsInterval);
+
+        // Put your drawing code here
+
+    }
+}
+
+
 
 // game loop
 function loop() {
-  requestAnimationFrame(loop);
+  //requestAnimationFrame(loop);
+  startAnimating(60);
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
   //if (++count < 4) {
   //  return;
   //}
+ 
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);

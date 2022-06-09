@@ -316,8 +316,9 @@ function calculating() {
         snake.dx = grid * slowamount;
         snake.dy = 0;
 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        apple.x = 320;
+        apple.y = 320;
+	
         cou.innerHTML = "CURRENT SCORE: " + collected;
         snake.maxCells = startfat;
       }

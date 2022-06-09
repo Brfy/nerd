@@ -294,6 +294,7 @@ function calculating() {
     //context.fillRect(cell.x, cell.y, grid-1, grid-1);  
 
     // snake ate apple
+	//EAT
     if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50) {
       snake.maxCells++;
       sound();
@@ -303,7 +304,7 @@ function calculating() {
       collected++;
       collected += collected;
       snake.maxCells += collected;
-      slowamount *= 1.05;
+      slowamount *= 1.15;
       
       cou.innerHTML = "CURRENT SCORE: " + collected;
       CalcHigh();

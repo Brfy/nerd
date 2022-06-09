@@ -73,6 +73,14 @@ var count = 0;
 var collected = 0;
 var slowamount = 0.15;
 var startfat = 40;
+ 
+ 
+ let user = getCookie("username");
+  if (user != "") {
+    highest = user
+    hcou.innerHTML = "🤓 HIGH SCORE: " + highest;
+  }
+ 
 
 function sound(){
   songNum = Math.floor(Math.random() * 9) + 1;

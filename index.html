@@ -3,7 +3,6 @@
  <center><header>
   <font color="white">  <h1 id="highcounter">🤓 HIGH SCORE: 0</h1><font color="white">  
   <p style="font: verdana" id="counter">CURRENT SCORE: 0</p>
-</header><center/>
 <head>
 
 <meta charset="UTF-8">
@@ -204,7 +203,7 @@ var snake = {
   y: 160,
   
   // snake velocity. moves one grid length every frame in either the x or y direction
-  dx: grid * deltaTime * slowamount,
+  dx: grid * slowamount,
   dy: 0,
   
   // keep track of all grids the snake body occupies
@@ -374,27 +373,27 @@ document.addEventListener('keydown', function(e) {
 
  function left(){
   if(snake.dx === 0){
-    snake.dx = -grid * deltaTime * slowamount;
+    snake.dx = -grid * slowamount;
     snake.dy = 0;
   }
  }
  
  function right(){
   if(snake.dx === 0){
-    snake.dx = grid * deltaTime * slowamount;
+    snake.dx = grid * slowamount;
     snake.dy = 0;
   }
  }
  function up(){
   if(snake.dy === 0){
-    snake.dy = -grid * deltaTime * slowamount;
+    snake.dy = -grid * slowamount;
     snake.dx = 0;
   }
  }
  
  function down(){
   if(snake.dy === 0){
-    snake.dy = grid * deltaTime * slowamount;
+    snake.dy = grid * slowamount;
     snake.dx = 0;
   }
  }

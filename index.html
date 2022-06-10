@@ -95,7 +95,7 @@ var collected = 0;
 var slowamount = 0.15;
 var startfat = 40;
 var placement = canvas.width / grid;
-var sizemulti = 1
+var sizemulti = 1.2
 
  
  var user = getCookie("username");
@@ -297,7 +297,7 @@ function calculating() {
 
     // snake ate apple
 	//YUMMY
-    if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50) {
+    if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50 * sizemulti) {
       snake.maxCells++;
       sound();
       // canvas is 400x400 which is 25x25 grids 
@@ -337,8 +337,8 @@ function calculating() {
         apple.y = 320;
       }
     }
-  context.drawImage(img, cell.x - 25, cell.y - 25, 75, 75);
-  context.drawImage(grap, apple.x - 12, apple.y - 12, 32, 32);
+  context.drawImage(img, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
+  context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
   });
  requestAnimationFrame(calculating);
 }

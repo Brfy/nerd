@@ -80,6 +80,9 @@ img.src = 'nerd.png';
 const grap = new Image();
 grap.src = 'grape.png';
 
+const yel = new Image();
+yel.src = 'yellocir.png';
+	
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 
@@ -340,6 +343,7 @@ function calculating() {
     }
   context.drawImage(img, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
+  context.drawImage(yel, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   });
  requestAnimationFrame(calculating);
 }

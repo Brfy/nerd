@@ -238,21 +238,24 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var previous, timestamp, fps;
+var then = Date.now();
+var now, difference;
  
+	
+function animy(){
+	now = Date.now();
+difference = now - then;
+if (difference > 16.6666666667){
+	draw()
+	then = now;	
+}
+	requestAnimationFrame(animy);
+}
+	
 // game loop
-function calculating() {
+function draw() {
   
 
-  // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  //if (++count < 4) {
-  //  return;
-  //}
- previous = timestamp;
-	timestamp = Date.now();
-	fps = 1000 / (timestamp - previous);
-	fps = Math.min(fps, 60); //capped at 60 FPS
- 
  
 
   count = 0;
@@ -345,7 +348,6 @@ function calculating() {
   context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
   context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   });
- requestAnimationFrame(calculating);
 }
 
 function CalcHigh(){
@@ -430,7 +432,7 @@ document.addEventListener('keydown', function(e) {
  }
  
 // start the game
-calculating();
+animy();
 
 setInterval(function (){
 

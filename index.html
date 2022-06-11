@@ -245,7 +245,7 @@ var now, difference;
 function animy(){
 	now = Date.now();
 difference = now - then;
-if (difference > 16.6666666667){
+if (difference > 1000 / 60){
 	draw()
 	then = now;	
 }

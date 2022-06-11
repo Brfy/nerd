@@ -260,19 +260,20 @@ function calculating() {
   snake.y += snake.dy;
 
   // wrap snake position horizontally on edge of screen
-  if (snake.x < -30) {
-    snake.x = canvas.width - grid + 25;
+//screen wrap screen wrapping
+  if (snake.x < -60) {
+    snake.x = canvas.width - grid + 50;
   }
-  else if (snake.x >= canvas.width + 30) {
-    snake.x = -25;
+  else if (snake.x >= canvas.width + 60) {
+    snake.x = -50;
   }
   
   // wrap snake position vertically on edge of screen
-  if (snake.y < -30) {
-    snake.y = canvas.height - grid + 25;
+  if (snake.y < -60) {
+    snake.y = canvas.height - grid + 50;
   }
-  else if (snake.y >= canvas.height + 30) {
-    snake.y = -25;
+  else if (snake.y >= canvas.height + 60) {
+    snake.y = -50;
   }
 
   // keep track of where snake has been. front of the array is always the head

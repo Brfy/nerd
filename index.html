@@ -251,19 +251,19 @@ function animy(){
 	now = Date.now();
 difference = now - then;
 if (difference > 1000 / fps){
-	draw();
+	drawframes();
 	then = now;	
 }
 	requestAnimationFrame(animy);
 }
 	
 
-function drawframes(){
+function drawframes() {
   context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
   context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
-console.log("drew");
-requestAnimationFrame(drawframes);
+  console.log("drew");
+  requestAnimationFrame(drawframes);
 }
 	
 	
@@ -452,7 +452,7 @@ calculate();
 },1000/fps);
 // start the game
 //animy();
-requestAnimationFrame(drawframes);
+drawframes();
 
  
 </script>

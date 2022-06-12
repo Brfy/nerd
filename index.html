@@ -389,7 +389,7 @@ function update(deltaTime) {
       
       // snake occupies same space as a body part. reset game
      //DEATH
-      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 2) {
+      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 1) {
         CalcHigh();
         slowamount = startslow;
         collected = 0;

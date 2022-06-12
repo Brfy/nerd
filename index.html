@@ -76,7 +76,7 @@
  
  
  
- 
+ var globaldt = 0.1
  
  
 const img = new Image();
@@ -288,7 +288,6 @@ function tick() {
     lastUpdate = now;
 
     update(dt);
-    render();
 	
     console.log(dt);
 }
@@ -509,11 +508,12 @@ document.addEventListener('keydown', function(e) {
 //animy();
 //drawframes();
 
-//setInterval(function (){
+setInterval(function (){
+	render();
 //happendthissecond = calshap
 //calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
 //calshap = 0
-//},1000);
+},globaldt);
  
 </script>
 </body>

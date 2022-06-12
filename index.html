@@ -67,7 +67,7 @@
  
  
  
- 
+ var startslow = 1
  
  
  
@@ -95,7 +95,7 @@ var highest = 0
 var grid = 16;
 var count = 0;
 var collected = 0;
-var slowamount = 0.15;
+var slowamount = startslow;
 var startfat = 40;
 var placement = canvas.width / grid;
 var sizemulti = 1.2
@@ -326,7 +326,7 @@ function draw() {
      //DEATH
       if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 2) {
         CalcHigh();
-        slowamount = 0.15;
+        slowamount = startslow;
         collected = 0;
         snake.x = 160;
         snake.y = 160;

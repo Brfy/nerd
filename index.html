@@ -279,12 +279,6 @@ function calculate() {
 console.log("caled");
 
  
-now = Date.now();
-difference = now - then;
-
-	
-snake.dy *= difference/(1000/fps)
-snake.dx *= difference/(1000/fps)
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
@@ -468,10 +462,12 @@ calshap += 1
 drawframes();
 
 setInterval(function (){
-calscorer.innerHTML = "calculations that happend this second: " + calshap;
-happendthissecond = calshap
+happendthissecond = calshap * 2
+calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
+snake.dx *= fps/happendthissecond
+snake.dy *= fps/happendthissecond
 calshap = 0
-},1000);
+},500);
  
 </script>
 </body>

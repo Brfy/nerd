@@ -68,7 +68,7 @@
  
  
  
- var startslow = 0.15
+ var startslow = 2
  
  
  
@@ -289,6 +289,8 @@ function tick() {
 
     update(dt);
     render();
+	
+    console.log(dt);
 }
 
 	
@@ -318,7 +320,7 @@ snake.cells.forEach(function(cell, index) {
 function update(deltaTime) {
   
 	
-console.log("caled");
+//console.log("caled");
 
 
   count = 0;

@@ -66,7 +66,7 @@
  
  
  
- var fps = 60
+ 
  
  
  
@@ -237,6 +237,20 @@ var apple = {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+var then = Date.now();
+var now, difference;
+ 
+	
+function animy(){
+	now = Date.now();
+difference = now - then;
+if (difference > 1000 / 60){
+	draw()
+	then = now;	
+}
+	requestAnimationFrame(animy);
+}
 	
 // game loop
 function draw() {
@@ -253,19 +267,19 @@ function draw() {
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping
-  if (snake.x < -60) {
-    snake.x = canvas.width - grid + 50;
+  if (snake.x < -50) {
+    snake.x = canvas.width - grid + 45;
   }
-  else if (snake.x >= canvas.width + 60) {
-    snake.x = -50;
+  else if (snake.x >= canvas.width + 50) {
+    snake.x = -45;
   }
   
   // wrap snake position vertically on edge of screen
-  if (snake.y < -60) {
-    snake.y = canvas.height - grid + 50;
+  if (snake.y < -50) {
+    snake.y = canvas.height - grid + 45;
   }
-  else if (snake.y >= canvas.height + 60) {
-    snake.y = -50;
+  else if (snake.y >= canvas.height + 50) {
+    snake.y = -45;
   }
 
   // keep track of where snake has been. front of the array is always the head
@@ -418,11 +432,11 @@ document.addEventListener('keydown', function(e) {
  }
  
 // start the game
+animy();
 
 setInterval(function (){
-console.log("frame outputted!");
-draw();
-},1000/fps);
+
+},500);
  
 </script>
 </body>

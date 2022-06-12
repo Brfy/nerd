@@ -378,7 +378,7 @@ function update(deltaTime) {
       collected++;
       collected += collected;
       snake.maxCells += collected;
-      slowamount *= 1.08;
+      slowamount *= 1.025;
       
       cou.innerHTML = "CURRENT SCORE: " + collected;
       CalcHigh();
@@ -389,7 +389,7 @@ function update(deltaTime) {
       
       // snake occupies same space as a body part. reset game
      //DEATH
-      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 0) {
+      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 2) {
         CalcHigh();
         slowamount = startslow;
         collected = 0;

@@ -254,7 +254,7 @@ if (difference > 1000 / fps){
 	draw()
 	then = now;	
 }
-	requestAnimationFrame(animy);
+	//requestAnimationFrame(animy);
 }
 	
 // game loop
@@ -440,8 +440,8 @@ document.addEventListener('keydown', function(e) {
 animy();
 
 setInterval(function (){
-
-},500);
+requestAnimationFrame(animy);
+},1000/fps);
  
 </script>
 </body>

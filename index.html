@@ -76,7 +76,7 @@
  
  
  
- var globaldt = 0.1
+ 
  
  
 const img = new Image();
@@ -102,7 +102,7 @@ var grid = 16;
 var count = 0;
 var collected = 0;
 var slowamount = startslow;
-var startfat = 80;
+var startfat = 160;
 var placement = canvas.width / grid;
 var sizemulti = 1.2
  
@@ -280,7 +280,7 @@ var now, difference;
 	
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 0);
+var myInterval = setInterval(tick, 1000/75);
 
 function tick() {
     var now = Date.now();
@@ -288,6 +288,7 @@ function tick() {
     lastUpdate = now;
 
     update(dt);
+    render();
 	
     console.log(dt);
 }
@@ -508,12 +509,11 @@ document.addEventListener('keydown', function(e) {
 //animy();
 //drawframes();
 
-setInterval(function (){
-	render();
+//setInterval(function (){
 //happendthissecond = calshap
 //calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
 //calshap = 0
-},globaldt);
+//},1000);
  
 </script>
 </body>

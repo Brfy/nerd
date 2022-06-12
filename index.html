@@ -462,12 +462,12 @@ calshap += 1
 drawframes();
 
 setInterval(function (){
-happendthissecond = calshap * 2
+happendthissecond = calshap
 calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
-snake.dx *= fps/happendthissecond
-snake.dy *= fps/happendthissecond
+//snake.dx *= fps/happendthissecond
+//snake.dy *= fps/happendthissecond
 calshap = 0
-},500);
+},1000);
  
 </script>
 </body>

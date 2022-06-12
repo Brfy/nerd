@@ -68,7 +68,7 @@
  
  
  
- var startslow = 0.15
+ var startslow = 5
  
  
  
@@ -290,6 +290,7 @@ function tick() {
 	globaldt = dt
 
     render();
+update(dt);
 	
     console.log(dt);
 }
@@ -328,8 +329,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx);
-  snake.y += (snake.dy);
+  snake.x += (snake.dx * deltaTime);
+  snake.y += (snake.dy * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping
@@ -509,13 +510,6 @@ document.addEventListener('keydown', function(e) {
 // start the game
 //animy();
 //drawframes();
-
-setInterval(function (){
-update(globaldt);
-//happendthissecond = calshap
-//calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
-//calshap = 0
-},globaldt);
 	
 	
 	

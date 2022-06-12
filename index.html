@@ -277,7 +277,7 @@ var now, difference;
 	
 	
 	
-	
+	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
 var myInterval = setInterval(tick, 1000/120);
@@ -287,7 +287,8 @@ function tick() {
     var dt = (now - lastUpdate)/1000;
     lastUpdate = now;
 
-    update(dt);
+	globaldt = dt
+
     render();
 	
     console.log(dt);
@@ -509,11 +510,12 @@ document.addEventListener('keydown', function(e) {
 //animy();
 //drawframes();
 
-//setInterval(function (){
+setInterval(function (){
+update(globaldt);
 //happendthissecond = calshap
 //calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
 //calshap = 0
-//},1000);
+},globaldt);
  
 </script>
 </body>

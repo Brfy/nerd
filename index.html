@@ -73,7 +73,7 @@
  
  
  
- var fps = 60
+ var fps = 75
  
  
  
@@ -258,9 +258,52 @@ if (difference > 1000 / fps){
 }
 	requestAnimationFrame(animy);
 }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var lastUpdate = Date.now();
+var myInterval = setInterval(tick, 0);
+
+function tick() {
+    var now = Date.now();
+    var dt = (now - lastUpdate)/1000;
+    lastUpdate = now;
+
+    update(dt);
+    render();
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
-function drawframes() {
+function render() {
 snake.cells.forEach(function(cell, index) {
   context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
 });
@@ -273,19 +316,18 @@ snake.cells.forEach(function(cell, index) {
 	
 // game loop
 // cals cows
-function calculate() {
+function update(deltaTime) {
   
 	
 console.log("caled");
 
- 
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
 
   // move snake by it's velocity
-  snake.x += snake.dx;
-  snake.y += snake.dy;
+  snake.x += snake.dx * deltaTime;
+  snake.y += snake.dy * deltaTime;
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping
@@ -450,24 +492,25 @@ document.addEventListener('keydown', function(e) {
   }
  }
  
-var calshap = 60
-var happendthissecond = 60
+
+tick();
 	
-setInterval(function (){
-calculate();
-calshap += 1
-},1000/fps);
+//var calshap = 60
+//var happendthissecond = 60
+	
+//setInterval(function (){
+//calculate();
+//calshap += 1
+//},1000/fps);
 // start the game
 //animy();
-drawframes();
+//drawframes();
 
-setInterval(function (){
-happendthissecond = calshap
-calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
-//snake.dx *= fps/happendthissecond
-//snake.dy *= fps/happendthissecond
-calshap = 0
-},1000);
+//setInterval(function (){
+//happendthissecond = calshap
+//calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
+//calshap = 0
+//},1000);
  
 </script>
 </body>

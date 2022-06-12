@@ -44,6 +44,8 @@
 </head>
 <body>
 
+	
+<p style="font: verdana" id="cal">calculations that happend this second: 🤓</p>
 
 <audio src="01-Audio Track.mp3" id="c1"></audio>
 <audio src="02-Audio Track.mp3" id="c2"></audio>
@@ -92,6 +94,7 @@ var context = canvas.getContext('2d');
 
 var cou = document.getElementById('counter');
 var hcou = document.getElementById('highcounter');
+var calscorer = document.getElementById('cal');
 
 var highest = 0
 
@@ -451,11 +454,17 @@ document.addEventListener('keydown', function(e) {
 	
 setInterval(function (){
 calculate();
+var calshap
+calshap += 1
 },1000/fps);
 // start the game
 //animy();
 drawframes();
 
+setInterval(function (){
+calscorer.innerHTML = "calculations that happend this second: " + calshap;
+calshap = 0
+},1000);
  
 </script>
 </body>

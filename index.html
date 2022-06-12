@@ -280,7 +280,7 @@ var now, difference;
 	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 1000/60);
+var myInterval = setInterval(tick, 0);
 
 function tick() {
     var now = Date.now();
@@ -329,8 +329,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx * deltaTime);
-  snake.y += (snake.dy * deltaTime);
+  snake.x += (snake.dx * 1.5 * deltaTime);
+  snake.y += (snake.dy * 1.5 * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

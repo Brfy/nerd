@@ -283,8 +283,8 @@ now = Date.now();
 difference = now - then;
 
 	
-snake.dy *= difference/fps
-snake.dx *= difference/fps
+snake.dy *= difference/(1000/fps)
+snake.dx *= difference/(1000/fps)
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);

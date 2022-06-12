@@ -106,8 +106,6 @@ var slowamount = startslow;
 var startfat = 40;
 var placement = canvas.width / grid;
 var sizemulti = 1.2
-
-var currentspeed
  
  var user = getCookie("username");
   if (user != "") {
@@ -452,8 +450,8 @@ document.addEventListener('keydown', function(e) {
   }
  }
  
-var calshap
-var happendthissecond
+var calshap = 60
+var happendthissecond = 60
 	
 setInterval(function (){
 calculate();

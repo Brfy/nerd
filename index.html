@@ -254,7 +254,7 @@ if (difference > 1000 / fps){
 	draw()
 	then = now;	
 }
-	//requestAnimationFrame(animy);
+	requestAnimationFrame(animy);
 }
 	
 
@@ -445,7 +445,7 @@ document.addEventListener('keydown', function(e) {
  
 // start the game
 //animy();
-requestAnimationFrame(drawframes);
+drawframes();
 
 setInterval(function (){
 calculate();

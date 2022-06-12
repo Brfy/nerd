@@ -98,11 +98,11 @@ var calscorer = document.getElementById('cal');
 var highest = 0
 
 
-var grid = 32;
+var grid = 16;
 var count = 0;
 var collected = 0;
 var slowamount = startslow;
-var startfat = 10;
+var startfat = 20;
 var placement = canvas.width / grid;
 var sizemulti = 1.2
  
@@ -243,8 +243,8 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var then = Date.now();
-var now, difference;
+//var then = Date.now();
+//var now, difference;
  
 	//fps
 	//framerate independance independence
@@ -280,7 +280,7 @@ var now, difference;
 	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 0);
+var myInterval = setInterval(tick, 1000/fps);
 
 function tick() {
     var now = Date.now();
@@ -391,7 +391,7 @@ function update(deltaTime) {
       
       // snake occupies same space as a body part. reset game
      //DEATH
-      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 0) {
+      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 1) {
         CalcHigh();
         slowamount = startslow;
         collected = 0;

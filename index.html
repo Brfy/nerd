@@ -261,7 +261,7 @@ if (difference > 1000 / fps){
 function drawframes() {
 snake.cells.forEach(function(cell, index) {
   context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
-}
+});
   context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
   context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   console.log("drew");

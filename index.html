@@ -290,7 +290,6 @@ function tick() {
 	globaldt = dt
 
 update(dt);
-render();
 	
     console.log(dt);
 }
@@ -329,8 +328,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx * 1.5 * deltaTime);
-  snake.y += (snake.dy * 1.5 * deltaTime);
+  snake.x += (snake.dx * deltaTime);
+  snake.y += (snake.dy * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping
@@ -415,6 +414,7 @@ function update(deltaTime) {
       }
     }
   });
+render();
 }
 
 function CalcHigh(){

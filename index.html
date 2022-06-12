@@ -45,7 +45,7 @@
 <body>
 
 	
-<p style="font: verdana" id="cal">calculations that happend this second: 🤓</p>
+<p style="font: verdana; color:Tomato;" id="cal">calculations that happend this second: 🤓</p>
 
 <audio src="01-Audio Track.mp3" id="c1"></audio>
 <audio src="02-Audio Track.mp3" id="c2"></audio>
@@ -452,6 +452,7 @@ document.addEventListener('keydown', function(e) {
  }
  
 var calshap
+var happendthissecond
 	
 setInterval(function (){
 calculate();
@@ -463,6 +464,8 @@ drawframes();
 
 setInterval(function (){
 calscorer.innerHTML = "calculations that happend this second: " + calshap;
+happendthissecond = calshap
+fps *= fps/happendthissecond
 calshap = 0
 },1000);
  

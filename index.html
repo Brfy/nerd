@@ -328,8 +328,8 @@ function update(deltaTime) {
   context.clearRect(0,0,canvas.width,canvas.height);
 
   // move snake by it's velocity
-  snake.x += (snake.dx * deltaTime);
-  snake.y += (snake.dy * deltaTime);
+  snake.x += (snake.dx);
+  snake.y += (snake.dy);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

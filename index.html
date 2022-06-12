@@ -280,7 +280,7 @@ var now, difference;
 	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 0);
+var myInterval = setInterval(tick, 1000/60);
 
 function tick() {
     var now = Date.now();
@@ -289,8 +289,8 @@ function tick() {
 
 	globaldt = dt
 
-    render();
 update(dt);
+render();
 	
     console.log(dt);
 }

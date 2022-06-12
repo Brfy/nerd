@@ -68,7 +68,7 @@
  
  
  
- var startslow = 0.05
+ var startslow = 3
  
  
  
@@ -76,12 +76,6 @@
  
  
  
- 
- 
- 
- 
- 
- var globaldt = 0.1
  
  
  
@@ -293,9 +287,9 @@ function tick() {
     var dt = (now - lastUpdate)/1000;
     lastUpdate = now;
 
+    update(dt);
     render();
-
-    globaldt = dt
+	
     console.log(dt);
 }
 
@@ -323,7 +317,7 @@ snake.cells.forEach(function(cell, index) {
 	
 // game loop
 // cals cows
-function update() {
+function update(deltaTime) {
   
 	
 //console.log("caled");
@@ -333,8 +327,8 @@ function update() {
   context.clearRect(0,0,canvas.width,canvas.height);
 
   // move snake by it's velocity
-  snake.x += snake.dx;
-  snake.y += snake.dy;
+  snake.x += (snake.dx * deltaTime);
+  snake.y += (snake.dy * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping
@@ -515,9 +509,11 @@ document.addEventListener('keydown', function(e) {
 //animy();
 //drawframes();
 
-setInterval(function (){
-update();
-},globaldt);
+//setInterval(function (){
+//happendthissecond = calshap
+//calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
+//calshap = 0
+//},1000);
  
 </script>
 </body>

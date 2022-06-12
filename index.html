@@ -45,7 +45,6 @@
 <body>
 
 	
-<p style="font: verdana; color:Tomato;" id="cal">calculations that happend this second: 🤓</p>
 
 <audio src="01-Audio Track.mp3" id="c1"></audio>
 <audio src="02-Audio Track.mp3" id="c2"></audio>
@@ -326,8 +325,8 @@ console.log("caled");
   context.clearRect(0,0,canvas.width,canvas.height);
 
   // move snake by it's velocity
-  snake.x += snake.dx * deltaTime;
-  snake.y += snake.dy * deltaTime;
+  snake.x += (snake.dx * deltaTime);
+  snake.y += (snake.dy * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

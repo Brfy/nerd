@@ -107,6 +107,7 @@ var startfat = 40;
 var placement = canvas.width / grid;
 var sizemulti = 1.2
 
+var currentspeed
  
  var user = getCookie("username");
   if (user != "") {
@@ -465,7 +466,8 @@ drawframes();
 setInterval(function (){
 calscorer.innerHTML = "calculations that happend this second: " + calshap;
 happendthissecond = calshap
-fps *= fps/happendthissecond
+snake.dx *= fps/happendthissecond
+snake.dy *= fps/happendthissecond
 calshap = 0
 },1000);
  

@@ -289,7 +289,7 @@ function tick() {
 
 	globaldt = dt
 
-    render();
+    //render();
 	
     console.log(dt);
 }
@@ -390,7 +390,7 @@ function update(deltaTime) {
       
       // snake occupies same space as a body part. reset game
      //DEATH
-      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 0.1) {
+      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 0) {
         CalcHigh();
         slowamount = startslow;
         collected = 0;
@@ -512,6 +512,7 @@ document.addEventListener('keydown', function(e) {
 
 setInterval(function (){
 update(globaldt);
+render();
 //happendthissecond = calshap
 //calscorer.innerHTML = "calculations that happend this second: " + happendthissecond;
 //calshap = 0

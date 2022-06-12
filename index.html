@@ -262,7 +262,7 @@ function drawframes(){
   context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
   context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
-requestAnimationFrame(drawframes);
+drawframes();
 }
 	
 	
@@ -443,13 +443,14 @@ document.addEventListener('keydown', function(e) {
   }
  }
  
+	
+setInterval(function (){
+calculate();
+},1000/fps);
 // start the game
 //animy();
 drawframes();
 
-setInterval(function (){
-calculate();
-},1000/fps);
  
 </script>
 </body>

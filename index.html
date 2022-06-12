@@ -71,7 +71,7 @@
  
  
  
- var fps = 60
+ var fps = 120
  
  
  
@@ -257,8 +257,18 @@ if (difference > 1000 / fps){
 	//requestAnimationFrame(animy);
 }
 	
+
+function drawframes(){
+  context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
+  context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
+  context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
+requestAnimationFrame(drawframes);
+}
+	
+	
 // game loop
-function draw() {
+// cals cows
+function calculate() {
   
 
  
@@ -349,9 +359,6 @@ function draw() {
         apple.y = 320;
       }
     }
-  context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
-  context.drawImage(grap, apple.x - 12 * sizemulti, apple.y - 12 * sizemulti, 32 * sizemulti, 32 * sizemulti);
-  context.drawImage(img, snake.x - 25 * sizemulti, snake.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
   });
 }
 
@@ -437,10 +444,11 @@ document.addEventListener('keydown', function(e) {
  }
  
 // start the game
-animy();
+//animy();
+requestAnimationFrame(drawframes);
 
 setInterval(function (){
-requestAnimationFrame(animy);
+calculate();
 },1000/fps);
  
 </script>

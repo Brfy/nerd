@@ -72,7 +72,7 @@
  
  
  
- var fps = 75
+ var fps = 60
  
  
  
@@ -306,6 +306,7 @@ function tick() {
 	
 
 function render() {
+context.clearRect(0,0,canvas.width,canvas.height);
 snake.cells.forEach(function(cell, index) {
   context.drawImage(yel, cell.x - 25 * sizemulti, cell.y - 25 * sizemulti, 75 * sizemulti, 75 * sizemulti);
 });
@@ -325,7 +326,6 @@ function update(deltaTime) {
 
 
   count = 0;
-  context.clearRect(0,0,canvas.width,canvas.height);
 
   // move snake by it's velocity
   snake.x += (snake.dx);

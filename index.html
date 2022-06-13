@@ -60,7 +60,7 @@
 
 
 
-<canvas width="700" height="700" id="game"></canvas>
+<canvas width="1400" height="700" id="game"></canvas>
 <script>
  
  
@@ -103,8 +103,9 @@ var count = 0;
 var collected = 0;
 var slowamount = startslow;
 var startfat = 40;
-var placement = canvas.width / grid;
-var sizemulti = 1.2
+var placementx = canvas.width / grid;
+var placementy = canvas.height / grid;
+var sizemulti = 1.6
  
  var user = getCookie("username");
   if (user != "") {
@@ -375,8 +376,8 @@ function update(deltaTime) {
       snake.maxCells++; // go to https://brfy.github.io/nerd/ for the best game on earth
       sound();
       // canvas is 400x400 which is 25x25 grids 
-      apple.x = getRandomInt(0, placement) * grid;
-      apple.y = getRandomInt(0, placement) * grid;
+      apple.x = getRandomInt(0, placementx) * grid;
+      apple.y = getRandomInt(0, placementy) * grid;
       collected++;
       collected += collected;
       snake.maxCells += collected;

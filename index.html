@@ -72,7 +72,7 @@
  
  
  
- var fps = 60
+ var fps = 30
  
  
  
@@ -281,7 +281,7 @@ function getRandomInt(min, max) {
 	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 0);
+var myInterval = setInterval(tick, 1000/fps);
 
 function tick() {
     var now = Date.now();
@@ -298,9 +298,6 @@ render();
 
 	
 	
-	
-	
-
 	
 	
 	

@@ -381,7 +381,7 @@ function update(deltaTime) {
       collected++;
       collected += collected;
       snake.maxCells += collected;
-      slowamount *= 1.025;
+      slowamount *= 1.01;
       
       cou.innerHTML = "CURRENT SCORE: " + collected;
       CalcHigh();

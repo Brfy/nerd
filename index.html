@@ -281,7 +281,7 @@ function getRandomInt(min, max) {
 	var globaldt = 0.1
 	
 	var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 1000/fps);
+var myInterval = setInterval(tick, 0);
 
 function tick() {
     var now = Date.now();
@@ -300,9 +300,12 @@ render();
 	
 	
 	
+
 	
 	
-	ctx.imageSmoothingQuality = "low";
+	
+	
+	
 	
 	
 	
@@ -392,7 +395,7 @@ function update(deltaTime) {
       
       // snake occupies same space as a body part. reset game
      //DEATH
-      if (getDistance(cell.x, cell.y, snake.cells[i].x, snake.cells[i].y) < 0.5) {
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
         CalcHigh();
         slowamount = startslow;
         collected = 0;

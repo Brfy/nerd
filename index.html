@@ -107,7 +107,7 @@ var placementx = canvas.width / grid;
 var placementy = canvas.height / grid;
 var sizemulti = 1.2
  
- var user = getCookie("username");
+ var user = getCookie("score");
   if (user != "") {
     highest = user
     hcou.innerHTML = "🤓 HIGH SCORE: " + highest;
@@ -422,7 +422,7 @@ function CalcHigh(){
   if(collected > highest){
     highest = collected;
     hcou.innerHTML = "🤓 HIGH SCORE: " + highest;
-    document.cookie = "username=" + highest;
+    setCookie("score",highest)
   }
 }
  
@@ -440,6 +440,29 @@ function getCookie(cname) {
   }
   return "";
 }
+	
+	
+	
+	
+	
+	
+	
+	
+function setCookie(cname, cvalue) {
+  //const d = new Date();
+  //d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ new Date(2147483647 * 1000).toUTCString(); //d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 function getDistance(x1, y1, x2, y2){
     let y = x2 - x1;

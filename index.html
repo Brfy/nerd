@@ -82,7 +82,7 @@
  var fps = 60
  
  
- 
+ var hasinteracted = false
  
  
  
@@ -449,9 +449,6 @@ function getCookie(cname) {
 }
 	
 	
-//START THE SONG STARSONG NERDGAMESOUNDTRACK OST ORIGINAL SOUNDTRACK LOL
-	
-nerdsong();	
 	
 	
 	
@@ -576,6 +573,7 @@ if (e.which === 65) {
   if(snake.dx === 0){
     snake.dx = -grid * slowamount;
     snake.dy = 0;
+    hasinteracted = true;
   }
  }
  
@@ -583,12 +581,14 @@ if (e.which === 65) {
   if(snake.dx === 0){
     snake.dx = grid * slowamount;
     snake.dy = 0;
+    hasinteracted = true;
   }
  }
  function up(){
   if(snake.dy === 0){
     snake.dy = -grid * slowamount;
     snake.dx = 0;
+    hasinteracted = true;
   }
  }
  
@@ -596,8 +596,18 @@ if (e.which === 65) {
   if(snake.dy === 0){
     snake.dy = grid * slowamount;
     snake.dx = 0;
+    hasinteracted = true;
   }
  }
+	
+	
+	
+$(hasinteracted).on('change',function(){
+    if(hasinteracted == true)
+    {
+	nerdsong();    
+    }
+});
  
 
 	

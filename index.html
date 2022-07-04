@@ -60,6 +60,8 @@
 <audio src="07-Audio Track.mp3" id="c7"></audio>
 <audio src="08-Audio Track.mp3" id="c8"></audio>
 <audio src="09-Audio Track.mp3" id="c9"></audio>
+<audio src="nerdgame2.mp3" id="s1"></audio>
+<audio src="nerdgame2rev.mp3" id="s1r"></audio>
 
 
 
@@ -462,6 +464,36 @@ function setCookie(cname, cvalue) {
 	
 	
 	
+	
+
+	
+	
+	
+	
+	
+function nerdsong() {
+speder = generateRandomInteger(0.6, 1.4);
+rngsong = Math.floor(Math.random() * 2) + 1;
+  if(rngsong == 1){
+    s1.load();
+    s1.play();
+    s1.playbackRate = speder
+  } else if(rngsong == 2){
+    s1r.load();
+    s1r.play();
+    s1r.playbackRate = speder
+  }
+	
+	
+}
+	
+	
+	
+	
+function generateRandomInteger(min, max) {
+  return Math.floor(min + Math.random()*(max - min + 1))
+}	
+
 	
 	
 	

@@ -60,8 +60,6 @@
 <audio src="07-Audio Track.mp3" id="c7"></audio>
 <audio src="08-Audio Track.mp3" id="c8"></audio>
 <audio src="09-Audio Track.mp3" id="c9"></audio>
-<audio src="nerdgame2.mp3" id="s1"></audio>
-<audio src="nerdgame2rev.mp3" id="s1r"></audio>
 
 
 
@@ -82,7 +80,7 @@
  var fps = 60
  
  
- var hasinteracted = false
+ 
  
  
  
@@ -452,6 +450,9 @@ function getCookie(cname) {
 	
 	
 	
+	
+	
+	
 function setCookie(cname, cvalue) {
   //const d = new Date();
   //d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -460,58 +461,6 @@ function setCookie(cname, cvalue) {
 }
 	
 	
-	
-	
-
-	
-	
-	
-	
-	
-function nerdsong() {
-speder = generateRandomInteger(0.6, 1.4);
-rngsong = Math.floor(Math.random() * 2) + 1;
-  if(rngsong == 1){
-    s1.load();
-    s1.play();
-    s1.playbackRate = speder
-  } else if(rngsong == 2){
-    s1r.load();
-    s1r.play();
-    s1r.playbackRate = speder
-  }
-	
-	
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-function generateRandomInteger(min, max) {
-  return Math.floor(min + Math.random()*(max - min + 1))
-}	
-
-	
-	
-	
-	
-	
-s1.addEventListener("ended", function(){
-     nerdsong();
-});
-	
-	
-s1r.addEventListener("ended", function(){
-     nerdsong();
-});
 	
 	
 	
@@ -573,7 +522,6 @@ if (e.which === 65) {
   if(snake.dx === 0){
     snake.dx = -grid * slowamount;
     snake.dy = 0;
-    hasinteracted = true;
   }
  }
  
@@ -581,14 +529,12 @@ if (e.which === 65) {
   if(snake.dx === 0){
     snake.dx = grid * slowamount;
     snake.dy = 0;
-    hasinteracted = true;
   }
  }
  function up(){
   if(snake.dy === 0){
     snake.dy = -grid * slowamount;
     snake.dx = 0;
-    hasinteracted = true;
   }
  }
  
@@ -596,18 +542,8 @@ if (e.which === 65) {
   if(snake.dy === 0){
     snake.dy = grid * slowamount;
     snake.dx = 0;
-    hasinteracted = true;
   }
  }
-	
-	
-	
-hasinteracted.on('change',function(){
-    if(hasinteracted == true)
-    {
-	nerdsong();    
-    }
-});
  
 
 	

@@ -19,7 +19,7 @@
 <meta charset="UTF-8">
 
 <meta name="description" content="Game about a grape-eating Nerd">
-<meta name="keywords" content="Game, Free, Fun, Nerd, Grape, Videogame, School, Learning, Math, Glasses">
+<meta name="keywords" content="Game, Free, Fun, Nerd, Grape">
 	
 	
   <title></title>
@@ -80,8 +80,7 @@
  var fps = 60
  
  
- var wid = window.screen.availWidth;
- var hit = window.screen.availHeight;
+ 
  
  
  
@@ -180,6 +179,7 @@ var sizemulti = 1.2
 
     e.preventDefault();
   };
+ 
  
  
  
@@ -335,8 +335,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx * deltaTime)*(1920/wid);
-  snake.y += (snake.dy * deltaTime)*(1920/wid);
+  snake.x += (snake.dx * deltaTime);
+  snake.y += (snake.dy * deltaTime);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

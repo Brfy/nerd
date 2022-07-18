@@ -80,7 +80,8 @@
  var fps = 60
  
  
- 
+ var wid = window.screen.availWidth;
+ var hit = window.screen.availHeight;
  
  
  
@@ -179,7 +180,6 @@ var sizemulti = 1.2
 
     e.preventDefault();
   };
- 
  
  
  
@@ -335,8 +335,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx * deltaTime);
-  snake.y += (snake.dy * deltaTime);
+  snake.x += (snake.dx * deltaTime)/(1080/wid);
+  snake.y += (snake.dy * deltaTime)/(1920/hit);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

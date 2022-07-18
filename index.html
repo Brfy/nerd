@@ -335,8 +335,8 @@ function update(deltaTime) {
   count = 0;
 
   // move snake by it's velocity
-  snake.x += (snake.dx * deltaTime)/(1920/wid);
-  snake.y += (snake.dy * deltaTime)/(1920/wid);
+  snake.x += (snake.dx * deltaTime)*(1920/wid);
+  snake.y += (snake.dy * deltaTime)*(1920/wid);
 
   // wrap snake position horizontally on edge of screen
 //screen wrap screen wrapping

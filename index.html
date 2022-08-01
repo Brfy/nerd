@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
  <center><header>
@@ -65,7 +66,7 @@
 
 
 
-<canvas width="800" height="450" id="game"></canvas>
+<canvas width="800" height="450" id="game" style="height:auto;display: block;margin-left: auto;margin-right: auto;width: 100%;"></canvas>
 <script>
  
  
@@ -85,13 +86,13 @@
  
  
 const img = new Image();
-img.src = 'nerd.png';
+img.src = 'https://nerdgame.xyz/nerd.png';
 
 const grap = new Image();
-grap.src = 'grape.png';
+grap.src = 'https://nerdgame.xyz/grape.png';
 
 const yel = new Image();
-yel.src = 'nerdblank.png';
+yel.src = 'https://nerdgame.xyz/nerdblank.png';
 	
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
@@ -244,7 +245,6 @@ var apple = {
  
 
 // get random whole numbers in a specific range
-// @see https://stackoverflow.com/a/1527820/2124254
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -378,7 +378,7 @@ function update(deltaTime) {
     // snake ate apple
 	//YUMMY
     if (getDistance(apple.x, apple.y, cell.x, cell.y) < 50 * sizemulti) {
-      snake.maxCells++; // go to https://brfy.github.io/nerd/ for the best game on earth
+      snake.maxCells++; // go to https://nerdgame.xyz for the best game on earth
       sound();
       // canvas is 400x400 which is 25x25 grids 
       apple.x = getRandomInt(0, placementx) * grid;
